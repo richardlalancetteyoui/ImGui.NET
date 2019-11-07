@@ -38,7 +38,9 @@ namespace ImGuiNET
                 AntlrInputStream stream = new AntlrInputStream(File.OpenRead("main.youi"));
                 _input = stream.ToString();
             }
-            ImGui.SameLine(); 
+            
+            ImGui.SameLine();
+            
             if (ImGui.Button("Run"))
             {
                 var sw = new StringWriter();
@@ -53,6 +55,7 @@ namespace ImGuiNET
 
                 IParseTree tree = parser.statements();
                 ParseTreeWalker w = new ParseTreeWalker();
+                
                 KeyPrinter printer = new KeyPrinter();
                 w.Walk(printer, tree);
 //                IParseTreeListener listener = new youiBaseListener();
@@ -63,13 +66,11 @@ namespace ImGuiNET
 
             }
 
-//            ImGui.SetNextWindowSize(new Vector2(320, 240));
-//            ImGui.Begin("");
             ImGui.Separator();
             ImGui.NewLine();
-            ImGui.Text("You.i layout code");
+            ImGui.Text("You.i code");
             ImGui.SameLine();
-            ShowHelpMarker("Contents evaluated and appended to the window.");
+            ShowHelpMarker("Compiled to Abstract Syntax Tree.");
             ImGui.PushItemWidth(-1);
             ImGui.InputTextMultiline("##source", ref _input, 800, Vector2.Zero);
             ImGui.PopItemWidth();
@@ -94,8 +95,6 @@ namespace ImGuiNET
             ImGui.PushItemWidth(-1);
             ImGui.InputTextMultiline("##_output", ref _output, 800, Vector2.Zero);
             ImGui.PopItemWidth();
-
-            //            ImGui.End();
         }
 
         private static void ShowHelpMarker(string desc)
