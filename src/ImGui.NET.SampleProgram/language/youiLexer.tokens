@@ -1,0 +1,16 @@
+T__0=1
+T__1=2
+IDENTIFIER=3
+SEMI=4
+SCREEN=5
+CHECK=6
+BUTTON=7
+WS=8
+NEWLINE=9
+'['=1
+']'=2
+';'=4
+'screen'=5
+'check'=6
+'button'=7
+'\n'=9
