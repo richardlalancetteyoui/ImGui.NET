@@ -94,18 +94,6 @@ public partial class youiBaseListener : IyouiListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitButton([NotNull] youiParser.ButtonContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="youiParser.check"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterCheck([NotNull] youiParser.CheckContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="youiParser.check"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitCheck([NotNull] youiParser.CheckContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

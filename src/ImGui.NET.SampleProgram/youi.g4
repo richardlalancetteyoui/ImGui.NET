@@ -6,27 +6,18 @@ statements
 statement
     : screen
     | button 
-    | check
     ;
 
 control_arguments
-    : IDENTIFIER
+    : IDENTIFIER?
     ;
 
 screen
-    : SCREEN control_arguments SEMI
-    | SCREEN SEMI
+    : '|' control_arguments '|' SEMI
     ;
     
 button 
-    : '[' control_arguments ']'
-    | '[' ']'
-    | BUTTON SEMI
-    | BUTTON control_arguments SEMI
-    ;
-    
-check 
-    : CHECK control_arguments SEMI
+    : '[' control_arguments ']' SEMI
     ;
 
 IDENTIFIER
@@ -34,9 +25,6 @@ IDENTIFIER
    ;
          
 SEMI : ';';
-SCREEN: 'screen';
-CHECK : 'check';
-BUTTON : 'button';
 WS : [\u0020\u0009\u000C]+ -> skip;
 NEWLINE: '\n' -> skip;
 

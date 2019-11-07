@@ -80,14 +80,4 @@ public interface IyouiListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitButton([NotNull] youiParser.ButtonContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="youiParser.check"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterCheck([NotNull] youiParser.CheckContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="youiParser.check"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitCheck([NotNull] youiParser.CheckContext context);
 }
