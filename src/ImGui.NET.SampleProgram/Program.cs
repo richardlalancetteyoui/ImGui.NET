@@ -33,11 +33,14 @@ namespace ImGuiNET
         {
             ImGui.Begin("You.i Compact Language");
             
-            if (ImGui.Button("Load"))
-            {
-                AntlrInputStream stream = new AntlrInputStream(File.OpenRead("main.youi"));
-                _input = stream.ToString();
-            }
+            AntlrInputStream stream = new AntlrInputStream(File.OpenRead("main.youi"));
+            _input = stream.ToString();
+
+//            if (ImGui.Button("Load"))
+//            {
+//                AntlrInputStream stream = new AntlrInputStream(File.OpenRead("main.youi"));
+//                _input = stream.ToString();
+//            }
             
             ImGui.SameLine();
             
